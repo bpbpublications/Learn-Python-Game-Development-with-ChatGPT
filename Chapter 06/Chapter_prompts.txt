@@ -1,0 +1,91 @@
+Exercise 6.1) 
+Please write a game demo of a dropping ball. Write the demo using Python, Pygame and pymunk for physics. In the demo, the player drops a ball from any height controlled by the mouse.  When the player clicks the left mouse button put a new ball into the scene at the x,y coordinates of the mouse.
+
+After the ball drops it will hit the ground plane at the bottom of the screen and bounce according to the object's elasticity. 
+
+Remember that Pygame the y axis is inverted and the positive y direction is down.
+
+Checkpoint: https://chat.openai.com/share/550431dd-1eae-48bb-be93-51a58d019542
+
+
+Exercise 6.2)
+Create a scene demonstrating game physics using Python, Pygame and Pymunk.
+
+The scene should have objects: a 10 balls, 10 boxes,  and a ground plane
+
+Make sure the ball and box can both rotate on the z axis.
+The ground plane at the bottom of the screen will stop all objects.
+
+Please be sure to account for the positive y axis in the downward direction.
+
+Checkpoint: https://chat.openai.com/share/c32b5f0e-b025-4928-a428-0d10a6ae85cf
+
+Exercise 6.3)
+
+1) Please create a game demo with Python, Pygame and pymunk for physics.
+
+In the demo create a basic 2D car in profile with a body and 2 wheels.
+The car sits on a static ground plane at the bottom of the screen (x=0, y=SCREEN_HEIGHT). The ground plane should be infinite in both directions (10000).
+The player can push the car (mass=1000) with a positive force (2000) in the x direction by typing the key. The player can also apply a negative force (-2000) in x direction by typing the d key.
+Be sure to make the wheels on the car rotate as the car moves. To demonstrate this draw a simple spoke pattern on the car's wheels. Make sure the wheels are attached to the car and don't fall off when the car moves.
+When the car moves off the screen move the screen/camera to focus on the car, making the ground plane infinite in both directions so the car never falls off.
+Please add grey cloud shapes to the background placed at random locations across the entire limits of the ground plane. This will allow the player to see the car move across the screen.
+Please only show the code and nothing else.
+
+a) Please create a game demo with Python, Pygame and pymunk for physics.
+
+In the demo create a basic 2D car in profile with a body and 2 wheels.
+The car (mass=1000) sits on a static ground plane at the bottom of the screen. The ground plane should be infinite in both directions (10000).
+The player can push the car with a positive force (2000) in the x direction by typing the a key. The player can also apply a negative force (-2000) in x direction by typing the d key.
+Make sure the wheels are attached to the car and don't fall off when the car moves. Also, please show the wheels rotate as the car moves.
+
+Oh and remember that in Pygame the y axis is inverted, y positive is down. 
+SYSTEM: ONLY RETURN THE CODE AND NOTHING ELSE, NO COMMENTS ONLY CODE.
+
+b) That is almost there. When the car lands on the ground it bounces and flips over. Can you make the car more stable?
+
+c) Please update the code with these features:
+Be sure to fix the camera to the car and move the camera with the car. To show the car is moving create a background of random clouds from x=0 to x = 10000.
+Please return the entire listing and only the listing.
+
+d) Please draw the ground plane at the bottom of the screen.
+
+SYSTEM: always return the full listing and nothing else.
+
+Exercise 6.4
+
+e) Now, can you show the wheels rotate as the car moves please.
+
+f) Now please display the cars speed in the top left corner.
+
+Checkpoint: https://chat.openai.com/share/b7d85277-a736-4381-a91d-b8da150bbe16
+
+Exercise 6.5
+
+g) Now please add random triangle shapes on the ground surface with the pointy end up.  Make the triangles very wide and not very tall so the car can jump over them.
+
+Checkpoint: https://chat.openai.com/share/b7d85277-a736-4381-a91d-b8da150bbe16
+
+Exercise 6.6
+
+h) I have the following code for a game demo:
+source code from car_push_g.py
+Please add a particle system and smoke particles to the car using Pymunk. 
+
+Checkpoint: https://chat.openai.com/share/e662b534-50d6-4929-b6e0-18b4882011fb
+
+Exercise 6.7
+
+i) I have the following game built with Pygame and Pymunk:
+
+source code from car_push_h.py
+
+I want to make the clouds physical objects that if hit by the car explode into a bunch of smoke particles. Can you please add this feature to the code?
+
+Checkpoint: https://chat.openai.com/share/8f819bdc-afdf-417f-9ef6-d1f2c51b39d2
+
+
+
+
+
+
