@@ -1,0 +1,12 @@
+I want a {{game}} game in Python using Pygame and Pymunk for physics.
+Please write the code for the following feature:
+{% for item in requirements %}
+    {{ item }}
+{% endfor %}
+
+{% if code %}
+Here is code you have already generated for me, please add or update the code:
+{{code}}
+{% endif%}
+
+Note: Pygame has an inverted Y-axis, with the positive Y-axis pointing downward. The top of the screen corresponds to Y=0.

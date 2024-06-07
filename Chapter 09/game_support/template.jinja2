@@ -1,0 +1,11 @@
+I have a {{game}} game in Python. I want you to help me understand the code and support me in making changes.
+Please show me the code for the following feature:
+{% for item in requirements %}
+    {{ item }}
+{% endfor %}
+
+{% if code %}
+Here is the game code, please make suggestions, but don't add or update the code:
+{{code}}
+{% endif%}
+
