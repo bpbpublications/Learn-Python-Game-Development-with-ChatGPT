@@ -2,7 +2,7 @@ import speech_recognition as sr
 from openai import OpenAI
 from io import BytesIO
 
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="")
 
 
 def listen():

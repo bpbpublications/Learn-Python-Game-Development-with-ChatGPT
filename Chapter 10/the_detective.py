@@ -17,7 +17,7 @@ voices = { "MASTER" : "Bella",
           }
 
 if elevenlabs:
-    set_api_key("a23283e6cbca24813141d02f94ebe841")
+    set_api_key("")
 else:
     engine = pyttsx3.init('sapi5')
     voices = engine.getProperty('voices')
@@ -27,7 +27,7 @@ else:
     print (volume)                          #printing current volume level
     engine.setProperty('volume',1.0)    # setting up volume level  between 0 and 1
 
-openai.api_key = "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"
+openai.api_key = ""
 
 class StreamToVoice:
     def __init__(self, voices):
