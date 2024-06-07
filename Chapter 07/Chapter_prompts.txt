@@ -1,0 +1,28 @@
+Exercise 7.1
+Please write me a demo of an isometric tilemap using Python and Pygame.
+
+The map should consist of 4 terrain tile types: sand (yellow), grass (green), water (blue), ice (white)
+Place the tile drawing code in a function called draw_tile
+Draw a grid and overlay it to show the individual tiles
+
+Checkpoint: https://chat.openai.com/share/58edb85c-66bb-4cfe-8466-8cc953fafa05
+
+Exercise 7.2 
+Now please extend this demo by adding a couple more features:
+
+1) give the tiles some depth, say 8 pixels
+2) allow the player to scroll around the map using the arrow keys
+3) increase the size of the map to 16x16 tiles
+
+Exercise 7.6 
+a) I have the base for an isometric tile game using Python and Pygame, here: 
+[copy/paste contents of isometric_world_v.2/main.py into conversation window]
+I would not like to make this a tile placement editor complete with UI elements like animated menus and buttons.
+I want the player to be able to place tiles on the map by using the mouse. The code to do mouse selection is already in place and working. 
+When a player clicks the mouse on the map, a menu opens allowing them to select from one of the available tiles. After the player makes the selection the tile map is updated with the new tile
+
+b) 
+
+
+
+Checkpoint: https://chat.openai.com/share/db2f604a-4cd5-482a-a0ff-328cfd102114

@@ -1,0 +1,33 @@
+Exercise 1.1
+please write me a snake game in Python using PyGame
+
+
+Exercise 1.2
+a) You are a Python game developer who needs to write a snake game in Python using Pygame. The game should use the up, down, left, and right arrows to control movement. As well the player should be able to pause the game using the space bar. When the game is paused be sure to write “Paused” on the screen.
+
+b) The game looks great but requires a few changes. Please make the game background color black, the snake green, and the food blue in color. We also want to display the player's score, how many food pieces the snake has eaten. Display the score by writing the score label in the top right corner of the window.
+
+Excercise 1.3
+a) Please write me a lunar lander game in Python. When the lander crashes display an explosion and deduct 100 from the player's score. When the lander lands successfully display fireworks and add 1000 to the player's score. Display the player's score in the top right corner of the window. 
+
+Make the lander white in color and the background black with stars. The surface of the planet is represented with a line. The surface should be hilly and mountainous but there should be a flat area large enough for the lander to land on.
+
+b) [SYSTEM] You are a Python game developer. As a developer, you prefer to break down code into smaller modules that can be unit tested and imported as needed. When you get a new request, it is up to you to break down requirements into self-contained modules that can be run and tested. If you are unsure of which modules to develop first please ask the user.
+
+[USER] Please write me a lunar lander game in Python. When the lander crashes display an explosion and deduct 100 from the player's score. When the lander lands successfully display fireworks and add 1000 to the player's score. Display the player's score in the top right corner of the window. 
+Make the lander white in color and the background black with stars. The surface of the planet is represented with a line. The surface should be hilly and mountainous but there should be a flat area large enough for the lander to land on. 
+
+c) [USER] That is an excellent plan. Now that we have the window can you add a new module that creates the planet’s landscape in a file called landscape. Inside the module make 2 functions, one to generate the landscape and another to render it to the window. Then import the module into the main game.
+
+d) [USER] The landscape looks okay but let’s update the generate_landscape function so that the flat landing area is lower to the ground at a height of 100 and only 75 pixels wide and placed randomly. Also, fill the landscape with a random number of mountain peaks. Where each peak is drawn as a triangle with a random base width from 50 to 250 pixels.
+
+Exercise 1.5
+a) Completely rewrite the generate_landscape and render_landscape functions. First, the generate_landscape function should return a list of points, (x, y coordinate pairs) that represent the surface of the landscape.
+
+Generate the landscape points using the following algorithm:
+start at x = 0, y = random value from 250 to window height - 50
+increment x by some random value, take random value of y from  250 to window height - 50
+add the point x,y to the set
+check that x is not greater than the window width, if it is finish
+
+Create the landing area by altering the set of points. 

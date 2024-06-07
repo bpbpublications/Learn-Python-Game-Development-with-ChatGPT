@@ -1,0 +1,9 @@
+Make the player ship a triangle with a tail.
+The ship moves by typing the W key to move forward, and apply a physics force to the ship in the direction of the ship.
+Allow the ship to move off the edge of the screen and return to the opposite side.
+The A or D keys rotate the ships direction, A to rotate left and D to rotate right.
+Show a red flame from the back of the ship when the player types a thrust key.
+Darw the asteroids as circles and place them randomly and of random sizes from 20-100 pixels. 
+The asteroids move across the screen in a random vector and random velocity from 2-5
+Show the player's score in the top right corner. Each destroyed asteroid is worth 5 points.
+

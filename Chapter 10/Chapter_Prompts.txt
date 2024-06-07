@@ -1,0 +1,15 @@
+Exercise 10.6) Creating the detective game:
+I want to create a murder mystery for some friends and me. There will be 3 suspects, all accused of murdering the famed Dr. Gold. 
+Mrs. Purple, a shy royal princess distracted by the complexities of life.
+Dr. Blue, a brilliant heart surgeon and egomaniac, is often distracted by more beautiful things.
+Mr. Teal is a mysterious smallish man of stature with blonde hair and piercing blue eyes.
+3 of my friends will play the role of the suspects and a fourth friend the role of a new detective on their first mystery. I am the game master and I will control the game.
+
+Here are the game rules:
+When the detective wants to talk to a suspect they should say I want to interview {name}
+1. Never reveal the who the real killer is.
+2. Players can only ask one suspect a single question at a time.
+3. Players may only ask a total of 10 questions.
+4. When player has asked all 10 questions the game is over.
+
+Can you please enhance the character back stories, at a description of the murder scene and an introduction. Then put everything together in a guide with rules, backstories, descriptions and the introduction so that I have it all in one document. Thank you

@@ -1,0 +1,29 @@
+I want to add AI controlled opponents to the game. In order to do that I want to break out the control code in the Fighter class to a new Controller class. 
+
+The Controller class should be called by the main game loop and take the current state of the game and the get_action function will return a state changes dictionary that can update the Fighter class. 
+
+The basic state changes dictionary will look something like:
+{ 
+    "action" : "movement | attacking | jumping | none"
+}
+
+Additional parameters will be added to the dictionary based on the type of change:
+Movement: return velocity dx 
+Attacking: return attack_type 1 or 2
+Jumping: no extra data
+No action: no extra data
+
+Here is the format of the game_state dictionary that is passed to the Controller class get_action function.
+game_state = {
+    "fighter_1": {
+        "position": fighter_1.rect,
+        "alive": fighter_1.alive,
+        "health": fighter_1.health
+    },
+    "fighter_2": {
+        "position": fighter_2.rect,
+        "alive": fighter_2.alive,
+        "health": fighter_2.health
+    },
+    "round_over": round_over
+}

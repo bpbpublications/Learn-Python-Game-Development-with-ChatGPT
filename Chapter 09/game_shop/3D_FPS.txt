@@ -1,0 +1,5 @@
+please write me a 3D game demo featuring Python and Panda3D
+load a ground plane and nothing else 
+allow the player to control the camera the same as a first person shooter FPS
+
+

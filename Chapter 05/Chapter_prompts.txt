@@ -1,0 +1,70 @@
+Exercise 5.2)
+I want to add AI controlled opponents to the game. In order to do that I want to break out the control code in the Fighter class to a new Controller class. 
+
+The Controller class should be called by the main game loop and take the current state of the game and the get_action function will return a state changes dictionary that can update the Fighter class. 
+
+The basic state changes dictionary will look something like:
+{ 
+    "action" : "movement | attacking | jumping | none"
+}
+
+Additional parameters will be added to the dictionary based on the type of change:
+Movement: return velocity dx 
+Attacking: return attack_type 1 or 2
+Jumping: no extra data
+No action: no extra data
+
+Here is the format of the game_state dictionary that is passed to the Controller class get_action function.
+game_state = {
+    "fighter_1": {
+        "position": fighter_1.rect,
+        "alive": fighter_1.alive,
+        "health": fighter_1.health
+    },
+    "fighter_2": {
+        "position": fighter_2.rect,
+        "alive": fighter_2.alive,
+        "health": fighter_2.health
+    },
+    "round_over": round_over
+}
+
+ChatGPT-4 w/ plugin: https://chat.openai.com/share/6e42dc61-da5b-4a3e-b0f2-1f96cc5a104f
+
+Exercise 5.3)
+a) Please create a demo of behavior trees using the py_trees package and Python.
+
+Be sure to incorporate the following behaviors into the demo:
+the AI moves toward the opponent when the range is greater than the attack range and health is greater than 25.
+the AI moves away from the opponent when its health is below 25%
+the AI jumps when it determines the opponent player may attack
+the AI attacks when the range is less than the attack range
+
+Pass in the AIController class to each behavior so that the update function can query the controller for state changes like range, attack range and health
+
+Make sure the code for the demo will run in a single Python file and there are no errors. Also, log messages when decisions are made in the behavior tree.
+
+Checkpoint: https://chat.openai.com/share/6a88ecad-c00c-4e32-a048-74bdf5af7b6c
+
+Exercise 5.3) 
+Using ChatGPT-4, enable plugins AskTheCode:
+a) Please review the code at this repository: https://github.com/splintered-reality/py_trees
+
+b) Please create a demo of behavior trees using the py_trees package and Python.
+
+Demonstrate an AI that uses the following behavior tree:
+The AI will be in attack mode when its health is greater than 50% of its starting health, or if the AI has greater health than its opponent
+When the AI is not in attack mode it is in defend mode
+When in attack mode the AI moves toward the opponent when the range is greater than the attack range 
+When in attack mode the AI attacks when the range is less than the attack range
+When in defend mode the AI moves away from the opponent when its health is below 25%
+When in defend mode the the AI jumps when the opponent is within attack range
+
+Use an AIController class to control the AI. Be sure this class is injected into each behavior so that the update function can query the controller for state changes like range, attack range and health.
+
+Make sure the code for the demo will run in a single Python file and there are no errors. Also, log messages when decisions are made in the behavior tree and please use the py_trees visualization tools to output the final tree..
+
+c) various additional iterations
+
+https://chat.openai.com/share/a1d5b213-5609-4dcb-acaa-b4df1e104e2c
+https://chat.openai.com/share/a1d5b213-5609-4dcb-acaa-b4df1e104e2c

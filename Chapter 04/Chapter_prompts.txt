@@ -1,0 +1,13 @@
+Exercise 4.1
+PROMPT:
+I want to write a clone of the Flappy Bird game in Python with Pygame. Please follow the below specifications to make the game.
+
+In the game the PLAYER can Jump by typing the space key.
+Please draw the game background using light blue.
+Draw the obstacles as dark grey vertical blocks.
+Draw reward blocks away from the obstacle blocks. When the player collides with a reward they get 5 game points.
+Continue running the main game loop until the player collides with an obstacle. Stop the game loop when a player collides with an obstacle and display the players score in game points. Let the player start a new game by typing the G key.
+
+Please help me by starting to write this game. Be sure to include the main game module that will host the game engine. As well as the classes for the player, game obstacles and game rewards in the same file.
+
+checkpoint: https://chat.openai.com/share/41f95a32-4241-4591-bd1f-ea99866acfae
