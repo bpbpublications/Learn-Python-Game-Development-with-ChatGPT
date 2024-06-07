@@ -1,0 +1,153 @@
+[SYSTEM] You are a Python game developer. As a developer, you prefer to break down code into smaller modules that can be unit tested and imported as needed. When you get a new request, it is up to you to break down requirements into self-contained modules that can be run and tested. If you are unsure of which modules to develop first please ask the user.
+
+Begin by writing the main game modules and interfaces for all the key elements of the game. Instruct the user on how to build the game using the game modules and provide examples.
+
+[USER] Write me a classic game like Zork in Python and call it PyZork.
+
+Exercise 2.1
+
+a) Write me a classic game like Zork in Python and call it PyZork.
+
+Exercise 2.2
+
+a) [SYSTEM] You are a Python game developer. As a developer, you prefer to break down code into smaller modules that can be unit tested and imported as needed. When you get a new request, it is up to you to break down requirements into self-contained modules that can be run and tested. If you are unsure of which modules to develop first please ask the user.
+
+Begin by writing the main game modules and interfaces for all the key elements of the game. Instruct the user on how to build the game using the game modules and provide examples.
+
+[USER] Write me a classic game like Zork in Python and call it PyZork.
+
+b)[SYSTEM] You are a Python game developer. As a developer, you prefer to break down code into smaller modules that can be unit tested and imported as needed. When you get a new request, it is up to you to break down requirements into self-contained modules that can be run and tested. If you are unsure of which modules to develop first please ask the user.
+
+Begin by writing the main game modules and interfaces for all the key elements of the game. The user will help define key modules of the game by making the text all caps. For example PLAYER would represent the player module. Be sure to write Python code for each module the user identifies.
+
+Instruct the user on how to build the game using the game modules and provide examples.
+
+[USER] I want to write a classic text-based adventure game in Python and call it PyZork after the classic game Zork.
+
+In this game, the player will interact with the game world using free-from-text input. The game will respond with text descriptions of rooms, items and NPCs.
+
+Here are the important features of my game:
+The PLAYER has an inventory of ITEMs they can carry and use.
+The WORLD is composed of ROOMs that are connected through LINKs, a PLAYER may use a LINK to move to another ROOM by using the right ACTION
+The WORLD is inhabited by ITEMs and NPCs. ITEMs may be picked up and used by the PLAYER. NPCs may be spoken to, traded with or attacked.
+
+Can you help me by starting to write this game please. Be sure to include the main game module that will host the game engine and game interface loop.
+
+checkpoint: https://chat.openai.com/share/0783ea85-884c-44d4-aa67-2494b39096dc
+
+Exercise 2.3
+
+a) Now please write the text input command parser. Text commands will come in the form of action on an object. Where an action is defined by the Action class and an object could be one of Room, Item or NPC.
+
+The Action class should define a list of verbs that activate the action as well as the context of the action. Context of an action may require the player to carry a specific object in inventory, or for the object to be in the same area as the player.
+
+Here are some examples of action-object commands.
+
+move north - the action is moving using a ROOM LINK to another ROOM, the context of the action is the ROOM has a LINK
+throw torch - the action is throwing and the context is the PLAYER is carrying the torch ITEM
+talk wizard - the action is talking and the context is the wizard NPC is in the same ROOM as the PLAYER
+attach troll - the action is attacking and the context is the troll NPC is in the same ROOM as the PLAYER
+pickup torch - the action is getting and the context is the torch ITEM is in the same ROOM as the PLAYER
+
+checkpoint: https://chat.openai.com/share/3012e85e-acd3-44ed-b373-d2e6eb6776b4
+
+Exercise 2.4
+
+a) Okay now create 5 adventure fantasy-style rooms and add the links to connect those rooms.
+
+Then update the following section of code in the main loop, so that a player can move from room to room using actions, context and links.
+if action.context == "link":
+    # Check if the room has a link in the specified direction
+    pass
+
+checkpoint: https://chat.openai.com/share/5d89a7bc-1218-4c36-a395-2348d3e28a67
+
+Exercise 2.5
+
+a) Okay I now want to add a friendly wizard the player can talk to and get advice/suggestions.
+
+Put the wizard in one of the rooms and add the code to chat.  Please use the following context in order to update the code:
+if matching_actions:
+    action = matching_actions[0]
+    obj = None
+
+    if action.context == "link":
+        # Check if the room has a link in the specified direction
+        pass
+    elif action.context == "inventory":
+        # Check if the player has the object in inventory
+        pass
+    elif action.context == "npc":
+
+checkpoint: https://chat.openai.com/share/56a6ae3b-6d1d-4f8a-a710-65be9d50c9a8
+
+Exercise 2.6
+
+a) Next, we want to add the ability for the player to pickup and drop or throw items.
+
+Please add the functionality to allow for the player to pickup and throw an axe.
+
+Be sure to also modify the parser action context code:
+if len(parts) >= 2:
+            verb = parts[0].lower()
+            obj_name = " ".join(parts[1:]).lower()
+
+            # Find matching action based on verb
+            matching_actions = [action for action in actions if verb in action.verbs]
+            
+            if matching_actions:
+                action = matching_actions[0]
+                obj = None
+
+                if action.context == "link":
+                    # Check if the room has a link in the specified direction
+                    direction = obj_name
+                    target_room = world.links.get((current_room, direction), None)
+
+                    if target_room:
+                        current_room = target_room
+                        print("You move to the", direction)
+                        continue
+                    else:
+                        print("You can't go that way.")
+                        continue
+                    
+                elif action.context == "inventory":
+                    # Check if the player has the object in inventory
+                    pass
+                
+                if action.context == "npc":
+                    # Check if the NPC is in the same room
+                    npc = next((npc for npc in current_room.npcs if obj_name == npc.name.lower()), None)
+
+                    if npc:
+                        if action.name == "Talk":
+                            npc.talk(player)  # Call the talk method of the NPC
+                            continue
+                        else:
+                            print("You can't do that with the", npc.name)
+                            continue
+                    else:
+                        print("NPC not found.")
+                        continue
+                        
+                elif action.context == "room":
+                    # Check if the object is in the same room
+                    pass
+
+                if obj:
+                    if action.can_execute(player, obj):
+                        action.execute(player, obj)
+                    else:
+                        print("You can't do that.")
+                else:
+                    print("Object not found.")
+            else:
+                print("Invalid action.")
+
+ChatGPT Checkpoint: https://chat.openai.com/share/21bfb160-c03c-42a5-8bcd-21054e6460cd
+
+Exercise 2.7 Adding the Troll
+
+
+
